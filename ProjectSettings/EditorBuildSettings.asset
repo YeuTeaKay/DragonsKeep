@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/MainMenu.unity
     guid: 57a343c5de2ed6449940c34ccb0c6d6f
-  - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/Level 1.unity
     guid: 90230da056b716645b7220dccdb28394
-  - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/Level 2.unity
     guid: 82840df14ef353945b6b06a1e3afc028
-  - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/Level 3.unity
     guid: 9a183d13cc228f44f9986160ab8a895a
-  - enabled: 1
-    path: Assets/Scenes/Game Over.unity
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/Game Over.unity
     guid: 518b87e3a13bf064880e5a086dbb38d9
+  - enabled: 0
+    path: Assets/Dragon Keep/Scenes/Dragon's Keep.unity
+    guid: 15f67d5e38b2ac34f9c5c0f7c46139fc
   m_configObjects: {}
