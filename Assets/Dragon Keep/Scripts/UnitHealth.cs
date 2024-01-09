@@ -10,6 +10,18 @@ public class UnitHealth : NetworkBehaviour
     [SyncVar(hook = nameof(OnChangeHealth))]
     public int currentHealth = maxHealth;
     public RectTransform healthbar;
+    public bool destroyOnDeath;
+
+    private Vector3 respawnPosition;
+
+    
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+        
+
+        respawnPosition = transform.position;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -18,10 +30,14 @@ public class UnitHealth : NetworkBehaviour
             return;
         }
 
+
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            currentHealth = maxHealth;
+            if (destroyOnDeath)
+            {
+                Destroy(gameObject);
+            }
             RpcRespawn();
         }
     }
@@ -36,7 +52,17 @@ public class UnitHealth : NetworkBehaviour
     {
         if(isLocalPlayer)
         {
-            transform.position = Vector3.zero;
+            CmdRespawn();
         }
+    }
+
+    [Command]
+    private void CmdRespawn()
+    {
+        // Set the player's position to the respawn position
+        transform.position = respawnPosition;
+        
+        // Reset health to maxHealth after respawn
+        currentHealth = maxHealth;
     }
 }
